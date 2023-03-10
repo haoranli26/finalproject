@@ -2,11 +2,13 @@ package com.example.demo.service;
 
 import com.example.demo.model.Movie;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface MovieService {
     void saveMovie(Movie movie);
-    Optional<Movie> getMoviesByUser(int id);
+    List<Movie> getMoviesByUser(int id);
+    Movie findMovieByMovieName(String movie);
 
 
 }

@@ -3,9 +3,12 @@ package com.example.demo.service;
 import com.example.demo.model.Movie;
 import com.example.demo.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MovieServiceImpl implements MovieService{
 
     @Autowired
@@ -16,7 +19,14 @@ public class MovieServiceImpl implements MovieService{
     }
 
     @Override
-    public Optional<Movie> getMoviesByUser(int id) {
-        return movieRepository.findById(id);
+    public List<Movie> getMoviesByUser(int id) {
+        return movieRepository.findMovieByUser(id);
+    }
+
+
+
+    @Override
+    public Movie findMovieByMovieName(String movie) {
+        return movieRepository.findMovieByMovieName(movie);
     }
 }

@@ -25,4 +25,12 @@ public class User {
     @JoinTable(name = "user_movies", joinColumns = @JoinColumn (name = "user_id"),
             inverseJoinColumns = @JoinColumn(name ="movie_id"))
     private Collection<Movie> movies;
+    public User(String firstName, String lastName, String email, String password, Collection<Movie> movies) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.movies = movies;
+    }
+
 }
